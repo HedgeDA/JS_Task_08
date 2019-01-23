@@ -1,9 +1,6 @@
 'use strict';
 
-function toggleMenu(event) {
-  if (!event.target.dataset.hasOwnProperty('toggle')) {
-    return false;
-  }
+function toggleMenu() {
   if (this.classList.contains('show')) {
     this.classList.remove('show');
     this.classList.add('hide');
@@ -14,9 +11,10 @@ function toggleMenu(event) {
 }
 
 function openLink(event) {
-  console.log('openLink');
+  console.log(this.textContent);
 
   event.preventDefault();
+  event.stopPropagation();
 }
 
 function init(node) {
